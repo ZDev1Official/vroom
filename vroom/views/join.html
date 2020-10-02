@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    function search(){
+      window.location.href = `/${$("#uuid").val()}`;
+    }
+  </script>
+  <title>Vroom</title>
+</head>
+<body style="background: grey;">
+  <div class="main2">
+    <h1>Join Room</h1>
+    <textarea id="uuid" placeholder="Enter room code:"></textarea>
+    <button onclick="search()">Submit</button>
+  </div>
+</body>
+</html>
