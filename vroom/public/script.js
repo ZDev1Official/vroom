@@ -28,14 +28,14 @@ function appendMediaDevices(){
     function(stream){
       myVideoStream = stream;
       addVideoStream(myVideo, myVideoStream);
-      /*myPeer.on('call', (call)=>{
+      myPeer.on('call', (call)=>{
         call.answer(myVideoStream);
         const video = document.createElement('video');
         call.on('stream', (userVideoStream)=>{
             addVideoStream(video, userVideoStream);
         });
       });
-      addVideoStream(stearm, myVideo);*/
+      addVideoStream(stearm, myVideo);
     }
   );
 }
