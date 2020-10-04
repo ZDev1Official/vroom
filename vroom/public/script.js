@@ -81,7 +81,7 @@ function connectToNewUser(userId, stream) {
 }
 
 function leaveMeeting(){
-  window.close();
+  window.location = '/';
 }
 
 function addVideoStream(video, stream) {
@@ -157,6 +157,9 @@ const errorMsg = (t, msg) => {
   }else if(t.toLowerCase() == 'connect'){
     const html = `<li style="color:green;">${msg}</li>`;
     document.querySelector('#error_box').innerHTML += html + ' ';
+  }else{
+    const html = '<li style="color:orange">Message type is undefined</li>';
+    dicument.querySelector('#error_box').innerHTML = html;
   }
 }
 
