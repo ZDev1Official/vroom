@@ -1,7 +1,7 @@
 {
   "name": "vroom",
   "version": "1.0.0",
-  "description": "the best video-chat-app",
+  "description": "The best video-chat-app",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ."

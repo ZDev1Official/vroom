@@ -16,6 +16,13 @@ button{
   border-radius: 10px 10px;
 }
 
+#error_box{
+  height: 50px;
+  width: 50px;
+  list-style: none;
+  /*padding-left: 10px;*/
+}
+
 /* BUGGY CLASS :P */
 
 .buggy-and-biggy{
@@ -26,8 +33,8 @@ button{
 /* BUGGY CLASS :P */
 
 .main {
-    height: 100vh;
-    display: flex;
+  height: 100vh;
+  display: flex;
 }
 
 .main__left {

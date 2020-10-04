@@ -150,4 +150,19 @@ const setPlayVideo = () => {
   document.querySelector('.main__video_button').innerHTML = html;
 }
 
-appendMediaDevices();
+const errorMsg = (t, msg) => {
+  if(t.toLowerCase() == 'error'){
+    const html = `<li style="color:red;">${msg}</li>`;
+    document.querySelector('#error_box').innerHTML += html + ' ';
+  }else if(t.toLowerCase() == 'connect'){
+    const html = `<li style="color:green;">${msg}</li>`;
+    document.querySelector('#error_box').innerHTML += html + ' ';
+  }
+}
+
+try{
+  appendMediaDevices();
+  errorMsg('connect', 'mediaDevices are good!');
+}catch (e){
+  errorMsg('error', `${e}`);
+}
