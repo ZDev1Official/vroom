@@ -1,3 +1,7 @@
+/**
+ * Libraries
+ */
+
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
@@ -10,8 +14,13 @@ const peerServer = ExpressPeerServer(server, {
 });
 const { v4: uuidV4 } = require('uuid')
 
+/**
+ * Middlewares
+ */
+
 app.use('/peerjs', peerServer);
 app.use(cors());
+// Got some error from CORS policy, and added this
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', '*');
   res.append('Access-Control-Allow-Headers', 'Content-Type');
@@ -21,6 +30,10 @@ app.use((req, res, next) => {
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
+/**
+ * Routes
+ */
 
 app.get('/', (req,res)=>{
   res.sendFile(__dirname + '/views/index.html');
@@ -38,6 +51,10 @@ app.get('/:room', (req, res) => {
   res.render('room', { roomId: req.params.room });
 });
 
+/**
+ * Socket.io connection
+ */
+
 io.on('connection', socket => {
   socket.on('join-room', (roomId, userId) => {
     socket.join(roomId);
@@ -50,6 +67,10 @@ io.on('connection', socket => {
     });
   });
 });
+
+/**
+ * Listen handler
+ */
 
 server.listen(port, ()=>{
   console.log('Connected on port', port);

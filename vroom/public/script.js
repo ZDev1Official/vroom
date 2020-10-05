@@ -24,6 +24,7 @@ const peers = {};
     });
   });
 */
+
 function appendMediaDevices(){
   navigator.mediaDevices.getUserMedia({video: true,audio: true,},
     function(stream){
